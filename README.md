@@ -30,3 +30,7 @@ Discourse stellt je nach Version und Theme unterschiedliche Seitenstrukturen ber
 ## Bilder
 
 Für die beste Darstellung: Querformat 1200 × 500 px (Banner), transparentes PNG/WebP für Logo-Modus. Nur Bilder verwenden, für die die nötigen Nutzungsrechte vorliegen.
+
+
+## CSS-Pfad (wichtig)
+Die automatisch eingebundene Stylesheet-Datei liegt unter `common/common.scss`. Nicht im Repository-Stamm und nicht als `stylesheets/common.scss` ohne Import.
