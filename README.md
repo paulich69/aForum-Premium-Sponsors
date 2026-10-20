@@ -61,3 +61,12 @@ Die automatisch eingebundene Stylesheet-Datei liegt unter `common/common.scss`. 
 ## Version 7 – Mobilansicht
 
 Korrigiert schmale, zusammengeschobene Sponsorenkacheln in mobilen Themes. Die Kacheln verwenden auf Smartphones die gesamte verfügbare Inhaltsbreite und stehen untereinander. Die konfigurierbare Höhe und der Eckenradius gelten weiterhin; Desktop bleibt dreispaltig.
+
+## Version 8 – gewichtete Mobile-Ausspielung
+
+- Desktop: unverändert alle bis zu drei Sponsoren in drei Spalten.
+- Smartphone (bis 760 px): **nur eine** Sponsor-Kachel.
+- Pro Sponsor: `mobile_weight` als Gewicht 0 bis 20. Leer = 1, 0 = auf Mobile ausgeschlossen.
+- Beispiel 3, 1, 1: ungefähre Anzeigehäufigkeit 60 %, 20 %, 20 %.
+- Die Auswahl erfolgt zufällig beim Laden der Seite und bleibt bei DOM-Neurendern stabil; bei einem vollständigen Reload kann ein anderer Sponsor erscheinen. Keine garantierte Quote oder Impression-Messung.
+- Falls alle Gewichte 0 sind, wird auf Mobile keine Kachel gezeigt.

@@ -5,6 +5,9 @@ import { apiInitializer } from "discourse/lib/api";
 export default apiInitializer("1.14.0", (api) => {
   let observer;
   let scheduled = false;
+  // Chosen once per page load; DOM updates must not re-roll the ad.
+  let mobileChoiceKey = null;
+  let mobileChoiceSignature = null;
 
   const validUrl = (value) => {
     try {
@@ -49,6 +52,32 @@ export default apiInitializer("1.14.0", (api) => {
       old?.remove();
       return;
     }
+    // Weighted lottery: 3 means three times as likely as 1. Zero excludes
+    // a sponsor from mobile selection, but not from desktop display.
+    const candidates = sponsors.map((s, index) => ({
+      index,
+      weight: s.mobile_weight === undefined || s.mobile_weight === null || s.mobile_weight === ""
+        ? 1
+        : Math.max(0, Math.min(20, Number(s.mobile_weight) || 0)),
+    })).filter((entry) => entry.weight > 0);
+    const signature = JSON.stringify(sponsors.map((s) => [s.name, s.url, s.mobile_weight]));
+    if (signature !== mobileChoiceSignature) {
+      mobileChoiceSignature = signature;
+      const total = candidates.reduce((sum, item) => sum + item.weight, 0);
+      let roll = Math.random() * total;
+      mobileChoiceKey = null;
+      for (const item of candidates) {
+        roll -= item.weight;
+        if (roll < 0) {
+          mobileChoiceKey = item.index;
+          break;
+        }
+      }
+      if (mobileChoiceKey === null && candidates.length) {
+        mobileChoiceKey = candidates[candidates.length - 1].index;
+      }
+    }
+
     const section = document.createElement("section");
     section.id = "aforum-premium-sponsors";
     section.className = "aforum-sponsors";
@@ -61,9 +90,10 @@ export default apiInitializer("1.14.0", (api) => {
     section.style.setProperty("--aforum-sponsor-label-color", safeColor(settings.ad_label_color || "#D6B36A"));
     section.setAttribute("aria-label", "Werbung – Premium-Partner");
 
-    sponsors.forEach((sponsor) => {
+    sponsors.forEach((sponsor, index) => {
       const a = document.createElement("a");
       a.className = `aforum-sponsor aforum-sponsor--${sponsor.mode === "logo" ? "logo" : "banner"}`;
+      if (index === mobileChoiceKey) a.classList.add("aforum-sponsor--mobile-selected");
       a.href = validUrl(sponsor.url);
       a.target = "_blank";
       a.rel = "noopener noreferrer sponsored";

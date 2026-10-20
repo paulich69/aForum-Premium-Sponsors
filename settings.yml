@@ -29,6 +29,11 @@ sponsors:
         type: boolean
       position:
         type: integer
+      mobile_weight:
+        type: integer
+        validations:
+          min: 0
+          max: 20
 show_on_categories:
   type: bool
   default: true

@@ -79,6 +79,9 @@
     justify-items: stretch;
     align-items: stretch;
   }
+  #main-outlet #aforum-premium-sponsors > a.aforum-sponsor:not(.aforum-sponsor--mobile-selected) {
+    display: none;
+  }
   #main-outlet #aforum-premium-sponsors > a.aforum-sponsor {
     display: block;
     grid-column: 1 / -1;
