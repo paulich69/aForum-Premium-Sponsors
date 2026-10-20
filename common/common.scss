@@ -48,21 +48,14 @@
 }
 .aforum-sponsor__label {
   position: absolute; z-index: 1; top: 12px; left: 14px; font-size: 10px;
-  font-weight: 750; letter-spacing: .1em; color: #fff;
+  font-weight: 750; letter-spacing: .12em; color: var(--aforum-sponsor-label-color, #D6B36A);
   text-shadow: 0 1px 3px #000;
 }
-.aforum-sponsor__content {
-  position: relative; z-index: 1; align-self: end; display: flex; flex-direction: column;
-  gap: 3px; max-width: calc(100% - 48px); padding-top: 36px;
-  text-shadow: 0 1px 4px #000;
-}
-.aforum-sponsor__content strong { font-size: 17px; color: #fff; }
-.aforum-sponsor__content small { font-size: 12px; color: #fff; }
 .aforum-sponsor__arrow {
   position: absolute; z-index: 1; right: 12px; bottom: 12px;
   display: grid; place-items: center; width: 36px; height: 36px;
-  background: #d81c1c; color: #fff; border-radius: 5px;
-  font-size: 25px; font-weight: 700;
+  background: #d81c1c; color: #fff; border-radius: min(var(--aforum-sponsor-radius, 7px), 18px);
+  line-height: 1;
   transition: transform .2s ease;
 }
 .aforum-sponsor:hover .aforum-sponsor__arrow { transform: scale(1.13); }

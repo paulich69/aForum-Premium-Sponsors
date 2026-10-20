@@ -21,7 +21,7 @@ Theme-Komponente für Discourse: bis zu drei anklickbare Werbepartner-Kacheln vo
 - `active`: aktivieren/deaktivieren
 - `position`: Reihenfolge, aufsteigend
 
-Die ersten drei aktiven Einträge werden angezeigt. Jeder Banner ist als **WERBEPARTNER** markiert und verwendet `rel="sponsored noopener noreferrer"`.
+Die ersten drei aktiven Einträge werden angezeigt. Jeder Banner ist als **WERBUNG** markiert und verwendet `rel="sponsored noopener noreferrer"`.
 
 ## Hinweis zum Einbaupunkt
 
@@ -48,3 +48,11 @@ Die automatisch eingebundene Stylesheet-Datei liegt unter `common/common.scss`. 
 - `corner_radius`: Radius der Kachelecken in Pixeln, Standard **7**, erlaubter Bereich 0–40.
 - Beide Werte gelten einheitlich fuer alle Sponsor-Kacheln und werden direkt in den Discourse-Komponenteneinstellungen gepflegt.
 - Bilder bleiben mit `object-fit: contain` proportional und unbeschnitten.
+
+## Layout v6 – dezente Werbekennzeichnung und Chevron
+
+- Oben links steht nur noch **WERBUNG**, standardmäßig in Bronze `#D6B36A`.
+- Die Farbe lässt sich über `ad_label_color` ändern (HEX).
+- Partnername und Slogan werden nicht mehr sichtbar über das Bild gelegt; der Partnername bleibt als Alternativtext und Link-Beschriftung erhalten.
+- Unten rechts steht ein minimalistisches weißes Chevron auf rotem Grund (SVG, keine Font-Awesome-Abhängigkeit).
+- Der Chevron-Button übernimmt den einstellbaren Eckenradius der Kachel, begrenzt auf 18 px, damit er bei großen Radien gut aussieht.

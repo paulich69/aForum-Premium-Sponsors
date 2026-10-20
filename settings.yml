@@ -46,3 +46,8 @@ corner_radius:
   default: 7
   min: 0
   max: 40
+
+# Farbe der Kennzeichnung WERBUNG (HEX).
+ad_label_color:
+  type: string
+  default: "#D6B36A"
