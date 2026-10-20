@@ -22,7 +22,7 @@ export default apiInitializer("1.14.0", (api) => {
 
   function isHome() {
     const path = window.location.pathname.replace(/\/$/, "") || "/";
-    return path === "/" || (settings.show_on_categories && path === "/categories");
+    return path === "/" || (settings.show_on_categories && ["/categories", "/latest", "/new", "/top", "/hot"].includes(path));
   }
 
   function render() {

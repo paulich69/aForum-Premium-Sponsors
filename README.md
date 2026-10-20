@@ -82,3 +82,10 @@ Der rote Chevron-Button skaliert proportional zur eingestellten Kachelhöhe (23 
 - Die Skalierung betrifft ausschließlich das hochgeladene Bild, nicht Kachel, Label oder Chevron.
 - Bildseitenverhältnis bleibt erhalten (`object-fit: contain`); bei Vergrößerung kann das Bild näher an den Kachelrand rücken.
 - Auf Desktop und Mobile identisch.
+
+
+## Version 11 – Sponsorleiste auf allen Hauptreitern
+
+Die Sponsorleiste erscheint bei aktivierter Einstellung `show_on_categories` jetzt nicht nur unter **Kategorien**, sondern auch unter **Aktuell** (`/latest`), **Neu** (`/new`) und **Heiß** (`/top` bzw. `/hot`). Die drei Kacheln bleiben direkt vor der Forennavigation. Alle vorhandenen Sponsor-Einstellungen, Bildskalierungen und die gewichtete mobile Auswahl aus v10 bleiben erhalten.
+
+**Installation:** Dieses ZIP ersetzt die separate Theme-Komponente **aForum Premium Sponsors**. Das Haupttheme **aForum Alpha 16** muss nicht geändert werden.
