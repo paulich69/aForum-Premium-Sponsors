@@ -56,3 +56,8 @@ Die automatisch eingebundene Stylesheet-Datei liegt unter `common/common.scss`. 
 - Partnername und Slogan werden nicht mehr sichtbar über das Bild gelegt; der Partnername bleibt als Alternativtext und Link-Beschriftung erhalten.
 - Unten rechts steht ein minimalistisches weißes Chevron auf rotem Grund (SVG, keine Font-Awesome-Abhängigkeit).
 - Der Chevron-Button übernimmt den einstellbaren Eckenradius der Kachel, begrenzt auf 18 px, damit er bei großen Radien gut aussieht.
+
+
+## Version 7 – Mobilansicht
+
+Korrigiert schmale, zusammengeschobene Sponsorenkacheln in mobilen Themes. Die Kacheln verwenden auf Smartphones die gesamte verfügbare Inhaltsbreite und stehen untereinander. Die konfigurierbare Höhe und der Eckenradius gelten weiterhin; Desktop bleibt dreispaltig.

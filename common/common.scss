@@ -1,5 +1,8 @@
 #aforum-premium-sponsors {
   display: grid;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 16px 0 20px;
@@ -8,7 +11,10 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  display: flex;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
   height: var(--aforum-sponsor-height, 125px);
   min-height: 0;
   box-sizing: border-box;
@@ -59,9 +65,41 @@
   transition: transform .2s ease;
 }
 .aforum-sponsor:hover .aforum-sponsor__arrow { transform: scale(1.13); }
-@media (max-width: 760px) {
-  #aforum-premium-sponsors { grid-template-columns: 1fr; gap: 10px; }
-  .aforum-sponsor { height: var(--aforum-sponsor-height, 125px); }
+@media screen and (max-width: 760px) {
+  /* Mobile themes may apply generic styles to links and grid children.
+     Target our section explicitly so tiles never collapse to icon width. */
+  #main-outlet #aforum-premium-sponsors {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 12px;
+    margin: 12px 0 16px;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  #main-outlet #aforum-premium-sponsors > a.aforum-sponsor {
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: var(--aforum-sponsor-height, 125px);
+    margin: 0;
+    box-sizing: border-box;
+    flex: none;
+    justify-self: stretch;
+  }
+  #main-outlet #aforum-premium-sponsors .aforum-sponsor__label {
+    max-width: calc(100% - 24px);
+    white-space: nowrap;
+  }
+  #main-outlet #aforum-premium-sponsors .aforum-sponsor__arrow {
+    right: 12px;
+    left: auto;
+    bottom: 12px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .aforum-sponsor, .aforum-sponsor__arrow { transition: none; }
