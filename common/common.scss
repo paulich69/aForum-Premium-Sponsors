@@ -41,6 +41,8 @@
   object-fit: contain;
   object-position: center;
   z-index: -1;
+  transform: scale(var(--aforum-image-scale, 1));
+  transform-origin: center center;
 }
 /* Banner und Logo werden proportional eingepasst; die Kachelfarbe bleibt sichtbar. */
 .aforum-sponsor--banner img { object-fit: contain; }

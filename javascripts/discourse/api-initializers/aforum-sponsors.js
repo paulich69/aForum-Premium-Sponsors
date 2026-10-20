@@ -107,6 +107,13 @@ export default apiInitializer("1.14.0", (api) => {
         img.src = imageSrc;
         img.alt = sponsor.name || "";
         img.loading = "lazy";
+        // Per-partner image zoom, independent of the tile, label and chevron.
+        // Missing setting preserves existing images at 100%.
+        const requestedScale = Number(sponsor.image_scale);
+        const imageScale = sponsor.image_scale === undefined || sponsor.image_scale === null || sponsor.image_scale === "" || !Number.isFinite(requestedScale)
+          ? 100
+          : Math.max(90, Math.min(110, requestedScale));
+        img.style.setProperty("--aforum-image-scale", String(imageScale / 100));
         a.append(img);
       }
       const label = document.createElement("span");

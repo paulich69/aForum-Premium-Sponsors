@@ -29,6 +29,11 @@ sponsors:
         type: boolean
       position:
         type: integer
+      image_scale:
+        type: integer
+        validations:
+          min: 90
+          max: 110
       mobile_weight:
         type: integer
         validations:

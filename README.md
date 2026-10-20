@@ -74,3 +74,11 @@ Korrigiert schmale, zusammengeschobene Sponsorenkacheln in mobilen Themes. Die K
 ## Version 9
 
 Der rote Chevron-Button skaliert proportional zur eingestellten Kachelhöhe (23 %, begrenzt auf 22–55 px). Bei 125 px Kachelhöhe ist er rund 29 px groß. Das weiße Chevron ist kräftiger (SVG stroke-width 4) und skaliert mit. Desktop und Mobile verwenden dieselbe Regel.
+
+## Version 10 – individuelle Bildskalierung
+
+- Neues Feld `image_scale` pro Sponsor: ganzzahlig 90–110 (Prozent).
+- Ohne Eintrag bleibt das Bild bei 100 %, bestehende Einstellungen bleiben unverändert.
+- Die Skalierung betrifft ausschließlich das hochgeladene Bild, nicht Kachel, Label oder Chevron.
+- Bildseitenverhältnis bleibt erhalten (`object-fit: contain`); bei Vergrößerung kann das Bild näher an den Kachelrand rücken.
+- Auf Desktop und Mobile identisch.
