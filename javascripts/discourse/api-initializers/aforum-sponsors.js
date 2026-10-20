@@ -53,7 +53,6 @@ export default apiInitializer("1.14.0", (api) => {
     section.id = "aforum-premium-sponsors";
     section.className = "aforum-sponsors";
     section.setAttribute("aria-label", "Werbepartner");
-    section.style.setProperty("--af-count", String(sponsors.length));
 
     sponsors.forEach((sponsor) => {
       const a = document.createElement("a");

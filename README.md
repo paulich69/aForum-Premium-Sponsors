@@ -16,7 +16,7 @@ Theme-Komponente für Discourse: bis zu drei anklickbare Werbepartner-Kacheln vo
 - `image`: Bild direkt im Discourse-Editor hochladen
 - `image_url`: alternative externe Bildadresse; `image` hat Vorrang
 - `tagline`: optionaler Slogan
-- `mode`: `banner` (vollflächig) oder `logo` (Logo auf Hintergrundfarbe)
+- `mode`: `banner` oder `logo` (beide Bildvarianten werden ohne Beschnitt proportional eingepasst; Hintergrundfarbe frei wählbar)
 - `background`: HEX-Farbe, z. B. `#151515`
 - `active`: aktivieren/deaktivieren
 - `position`: Reihenfolge, aufsteigend
@@ -34,3 +34,10 @@ Für die beste Darstellung: Querformat 1200 × 500 px (Banner), transparentes PN
 
 ## CSS-Pfad (wichtig)
 Die automatisch eingebundene Stylesheet-Datei liegt unter `common/common.scss`. Nicht im Repository-Stamm und nicht als `stylesheets/common.scss` ohne Import.
+
+## Layout v4
+
+- Desktop: immer drei gleich breite Spalten. Bei nur einem Sponsor bleibt dieser links; übrige Plätze bleiben frei.
+- Alle hochgeladenen Bilder: `object-fit: contain`, proportional skaliert, vollständig sichtbar, ohne Beschnitt.
+- Mobil: eine Spalte.
+- Die Kachel-Farbe bleibt über `background` einstellbar.
