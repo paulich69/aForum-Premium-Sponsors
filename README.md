@@ -70,3 +70,7 @@ Korrigiert schmale, zusammengeschobene Sponsorenkacheln in mobilen Themes. Die K
 - Beispiel 3, 1, 1: ungefähre Anzeigehäufigkeit 60 %, 20 %, 20 %.
 - Die Auswahl erfolgt zufällig beim Laden der Seite und bleibt bei DOM-Neurendern stabil; bei einem vollständigen Reload kann ein anderer Sponsor erscheinen. Keine garantierte Quote oder Impression-Messung.
 - Falls alle Gewichte 0 sind, wird auf Mobile keine Kachel gezeigt.
+
+## Version 9
+
+Der rote Chevron-Button skaliert proportional zur eingestellten Kachelhöhe (23 %, begrenzt auf 22–55 px). Bei 125 px Kachelhöhe ist er rund 29 px groß. Das weiße Chevron ist kräftiger (SVG stroke-width 4) und skaliert mit. Desktop und Mobile verwenden dieselbe Regel.

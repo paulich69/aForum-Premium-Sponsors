@@ -59,9 +59,13 @@
 }
 .aforum-sponsor__arrow {
   position: absolute; z-index: 1; right: 12px; bottom: 12px;
-  display: grid; place-items: center; width: 36px; height: 36px;
+  display: grid; place-items: center;
+  width: clamp(22px, calc(var(--aforum-sponsor-height, 125px) * .23), 55px);
+  height: clamp(22px, calc(var(--aforum-sponsor-height, 125px) * .23), 55px);
   background: #d81c1c; color: #fff; border-radius: min(var(--aforum-sponsor-radius, 7px), 18px);
   line-height: 1;
+  /* Chevron scales with the button and stays bold at small sizes. */
+  svg { width: 65%; height: 65%; display: block; }
   transition: transform .2s ease;
 }
 .aforum-sponsor:hover .aforum-sponsor__arrow { transform: scale(1.13); }

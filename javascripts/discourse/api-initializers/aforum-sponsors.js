@@ -117,7 +117,7 @@ export default apiInitializer("1.14.0", (api) => {
       const arrow = document.createElement("span");
       arrow.className = "aforum-sponsor__arrow";
       arrow.setAttribute("aria-hidden", "true");
-      arrow.innerHTML = '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+      arrow.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
       a.append(arrow);
       section.append(a);
     });
