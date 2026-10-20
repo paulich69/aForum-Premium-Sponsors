@@ -41,3 +41,10 @@ Die automatisch eingebundene Stylesheet-Datei liegt unter `common/common.scss`. 
 - Alle hochgeladenen Bilder: `object-fit: contain`, proportional skaliert, vollständig sichtbar, ohne Beschnitt.
 - Mobil: eine Spalte.
 - Die Kachel-Farbe bleibt über `background` einstellbar.
+
+## Layout v5 – einstellbare Hoehe und Ecken
+
+- `tile_height`: Kachelhoehe in Pixeln, Standard **125**, erlaubter Bereich 90–300.
+- `corner_radius`: Radius der Kachelecken in Pixeln, Standard **7**, erlaubter Bereich 0–40.
+- Beide Werte gelten einheitlich fuer alle Sponsor-Kacheln und werden direkt in den Discourse-Komponenteneinstellungen gepflegt.
+- Bilder bleiben mit `object-fit: contain` proportional und unbeschnitten.

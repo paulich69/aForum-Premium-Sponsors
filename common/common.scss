@@ -9,10 +9,12 @@
   isolation: isolate;
   overflow: hidden;
   display: flex;
-  min-height: 152px;
+  height: var(--aforum-sponsor-height, 125px);
+  min-height: 0;
+  box-sizing: border-box;
   padding: 15px;
   border: 1px solid rgba(255,255,255,.15);
-  border-radius: 7px;
+  border-radius: var(--aforum-sponsor-radius, 7px);
   color: #fff !important;
   text-decoration: none !important;
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
@@ -66,7 +68,7 @@
 .aforum-sponsor:hover .aforum-sponsor__arrow { transform: scale(1.13); }
 @media (max-width: 760px) {
   #aforum-premium-sponsors { grid-template-columns: 1fr; gap: 10px; }
-  .aforum-sponsor { min-height: 125px; }
+  .aforum-sponsor { height: var(--aforum-sponsor-height, 125px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .aforum-sponsor, .aforum-sponsor__arrow { transition: none; }

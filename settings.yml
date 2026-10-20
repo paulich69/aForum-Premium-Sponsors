@@ -32,3 +32,17 @@ sponsors:
 show_on_categories:
   type: bool
   default: true
+
+# Einheitliche Hoehe aller Sponsor-Kacheln in Pixeln.
+tile_height:
+  type: integer
+  default: 125
+  min: 90
+  max: 300
+
+# Eckenradius aller Sponsor-Kacheln in Pixeln.
+corner_radius:
+  type: integer
+  default: 7
+  min: 0
+  max: 40

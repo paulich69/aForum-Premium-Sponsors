@@ -52,6 +52,11 @@ export default apiInitializer("1.14.0", (api) => {
     const section = document.createElement("section");
     section.id = "aforum-premium-sponsors";
     section.className = "aforum-sponsors";
+    // Global theme settings; keep the CSS values bounded and numeric.
+    const height = Math.max(90, Math.min(300, Number(settings.tile_height) || 125));
+    const radius = Math.max(0, Math.min(40, Number(settings.corner_radius) || 0));
+    section.style.setProperty("--aforum-sponsor-height", `${height}px`);
+    section.style.setProperty("--aforum-sponsor-radius", `${radius}px`);
     section.setAttribute("aria-label", "Werbepartner");
 
     sponsors.forEach((sponsor) => {
